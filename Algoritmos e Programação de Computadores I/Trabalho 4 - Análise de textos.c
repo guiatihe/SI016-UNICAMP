@@ -3,7 +3,7 @@
 
 int main(){
 	char entrada[1000], convercao[62];
-	int i, j[62], k = 0, l, m, n, o,s, condicao = 1, x ;
+	int i, j[62], k = 0, l, m, n, o,s, condicao = 1;
 	float total = 0, ocorrencia[62], probabilidade;
 	/*
 	atribuindo valor 0 à todos os itens do vetor j[62], é importante pois o vetor j[62] é responsável pela contagem de ocorrências
@@ -27,33 +27,34 @@ int main(){
 	for (i = 52, l = 48; i < 62; i++, l++){
 		convercao[i] = l;
 	}
-	
+
+	//VAI RODAR ENQUANTO NÃO LER 'FIM'
+	while(condicao == 1){
+
 
 	//recebendo a entrada do usuário
-	fgets(entrada, 1000, stdin);
-
-
-	//Encerra a contagem ao ler FIM
-	for (i = 0; entrada[i]='\0'; i++){
-	if(entrada[i] == 'F' && entrada[i+1]=='I' && entrada[i+2] == 'M'){
-		condicao = 0;
-		break;
-	}
-	}
+	fgets(entrada, 1002, stdin);
 
 	//contando a qtde de letras na entrada
 	for(i=0; entrada[i]!='\0'; i++){
-
-	//removendo caracteres especiais na conta do total de caracteres
-	if((entrada[i] > 47 && entrada[i] < 57) || (entrada[i] > 64 && entrada[i] < 91 )|| (entrada[i] > 96 && entrada[i] < 127)){
-		total = total + 1;
-	}
 
 }
 
 
 																//CONTANDO A QTDE DE CADA DIGITO (EXCETO CARACTERES ESPECIAIS)
 			while (i >= 0){
+
+				//conferindo se o paragrafo começa com FIM, caso comece, encerra as leituras e contagens para imprimir o resultado
+				if(entrada[0]=='F' && entrada[1]== 'I' && entrada[2] == 'M'){
+					condicao = 0;
+					break;
+
+				}
+				
+					//removendo caracteres especiais na conta do total de caracteres
+					if((entrada[i] > 47 && entrada[i] < 57) || (entrada[i] > 64 && entrada[i] < 91 )|| (entrada[i] > 96 && entrada[i] < 127)){
+						total = total + 1;
+					}
 
 				//letras maiúsculas
 				for(l = 65; l <= 90; l++){
@@ -80,7 +81,10 @@ int main(){
 					}
 				}
 					i--;
+
 				}
+
+		}
 
 																						// IMPRIMINDO OS RESULTADOS
 			printf("Caracteres Maiusculos:\n");
