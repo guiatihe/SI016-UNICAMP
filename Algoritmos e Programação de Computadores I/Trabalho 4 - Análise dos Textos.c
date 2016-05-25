@@ -27,7 +27,7 @@ int main(){
 	for (i = 52, l = 48; i < 62; i++, l++){
 		convercao[i] = l;
 	}
-	while (condicao == 1) {
+	
 
 	//recebendo a entrada do usuário
 	fgets(entrada, 1000, stdin);
@@ -40,7 +40,7 @@ int main(){
 		break;
 	}
 	}
-}
+
 	//contando a qtde de letras na entrada
 	for(i=0; entrada[i]!='\0'; i++){
 
